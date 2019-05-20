@@ -9,17 +9,23 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
+        <title>Reportes</title>
+        
+    </head><h1>Agregar Reporte a: ${maquina.nombre}</h1
     <body>
-        <h1>Agregar Reporte a: ${maquina.nombre}</h1
-        <form action="AgregarReporte" 
-             <input type="text"   placeholder="Descripcion" name="Des">
+     
+        <form action="AgregarReporte" method="POST">
+            <input type="text"   placeholder="Descripcion" name="Des">
              <input type="number"   placeholder="Unidades Totales" name="T">
             <input type="number"   placeholder="Unidades Aceptadas" name="A">
              <input type="text"   placeholder="Unidades Rechazadas" name="R">
              <input type="hidden"  value="${maquina.id}" name="idmaquina">
-             <button type="submit" class="btn btn-primary">Aceptar</button>
+              <button type="submit" class="btn btn-primary">Añadir Máquina</button>
         </form>
+            
+     
+            
+     
+             
     </body>
 </html>

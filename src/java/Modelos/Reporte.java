@@ -16,6 +16,7 @@ public class Reporte {
     int Rechazadas;
     int Totales;
     int id_maquina;
+    String Fecha;
 
     public Reporte() {
     }
@@ -66,6 +67,14 @@ public class Reporte {
 
     public void setId_maquina(int id_maquina) {
         this.id_maquina = id_maquina;
+    }
+
+    public String getFecha() {
+        return Fecha;
+    }
+
+    public void setFecha(String Fecha) {
+        this.Fecha = Fecha;
     }
     
     

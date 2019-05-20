@@ -5,9 +5,15 @@
  */
 package servlet;
 
+import Dao.Conexion;
+import Dao.ReporteDao;
+import Modelos.LineaProduccion;
 import Modelos.Maquina;
+import Modelos.Reporte;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,7 +33,20 @@ public class Reportes extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+ String Nombre = request.getParameter("nombre");
+        String idmaquina = request.getParameter("idmaquina");
+        String idlinea = request.getParameter("idlinea");
+        Maquina m = new Maquina();
+        m.setNombre(Nombre);
+        m.setId(Integer.parseInt(idmaquina));
+        m.setId_linea(Integer.parseInt(idlinea));
+        Conexion c = new Conexion();
+    Connection cc = c.connect();
+        ReporteDao r = new ReporteDao(cc);
+        ArrayList<Reporte> Lista= r.TraerReportes(m.getId());
+         request.setAttribute("reportes", Lista);
+        rd = request.getRequestDispatcher("/Final.jsp");
+        rd.forward(request, response);
     }
 
     @Override
