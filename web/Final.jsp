@@ -11,17 +11,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reportes</title>
+    <h1> Listado de reportes </h1>
     </head>
     <body>
 
 
         <c:forEach items="${reportes}" var="reporte" varStatus="status"> 
-            <p value="${reporte.descripcion}"> ${reporte.descripcion}</p>
+            Reporte: <a href="DetalleReporte?id=${reporte.id}&desc=${reporte.descripcion}&aceptadas=${reporte.aceptadas}&rechazadas=${reporte.rechazadas}&totales=${reporte.totales}&fecha=${reporte.fecha}&idmaquina=${reporte.id_maquina}"> ${reporte.fecha}</a><br><br>
+                
 
 
         </c:forEach>
 
-
-        <a href="index.html" > Inicio</a>
+            <br>
+        <a href="${pageContext.request.contextPath}" > Inicio</a>
     </body>
 </html>
