@@ -36,6 +36,7 @@ public class DetalleReporte extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
         String des = request.getParameter("desc");
         String fecha = request.getParameter("fecha");
         int totales = Integer.parseInt(request.getParameter("totales"));
@@ -43,8 +44,10 @@ public class DetalleReporte extends HttpServlet {
         int rechazadas = Integer.parseInt(request.getParameter("rechazadas"));
         int idmaquina = Integer.parseInt(request.getParameter("idmaquina"));
         Reporte reporte = new Reporte();
+        reporte.setId(id);
         reporte.setAceptadas(aceptadas);
         reporte.setDescripcion(des);
+        reporte.setTotales(totales);
         reporte.setRechazadas(rechazadas);
         reporte.setId_maquina(idmaquina);
         request.setAttribute("reporte", reporte);
