@@ -19,6 +19,8 @@ public class Maquina {
     int TR;
     int TE;
     int TiempoE;
+    int TiempoEst;
+    int TiempoPro;
 
     public Maquina() {
     }
@@ -94,6 +96,23 @@ public class Maquina {
     public void setTiempoE(int TiempoE) {
         this.TiempoE = TiempoE;
     }
+
+    public int getTiempoEst() {
+        return TiempoEst;
+    }
+
+    public void setTiempoEst(int TiempoEst) {
+        this.TiempoEst = TiempoEst;
+    }
+
+    public int getTiempoPro() {
+        return TiempoPro;
+    }
+
+    public void setTiempoPro(int TiempoPro) {
+        this.TiempoPro = TiempoPro;
+    }
+    
 
     @Override
     public String toString() {

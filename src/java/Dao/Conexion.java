@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class Conexion {
       public Connection connect() {
         Connection con = null;
-        String URL = "jdbc:sqlserver://localhost:1433;databaseName = proceso";
+        String URL = "jdbc:sqlserver://localhost:1433;databaseName = proceso2";
 
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");

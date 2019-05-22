@@ -25,9 +25,9 @@ public class MaquinaDao {
         this.c = c;
     }
 
-    public void InsertarMaquina(String name, String ref, String desc, int tpt, int tr, int id_linea, int TE, int TiempoE) {
+    public void InsertarMaquina(String name, String ref, String desc, int tpt, int tr, int id_linea, int TE, int TiempoE,int TiempoEst, int TiempoPro) {
         try {
-            String consulta = "insert into Maquina (Nombre,Referencia,Descrip,id_linea,TPT,TR,TE,TiempoE) values (?,?,?,?,?,?,?,?)";
+            String consulta = "insert into Maquina (Nombre,Referencia,Descrip,id_linea,TPT,TR,TE,TiempoE,TiempoEst,TiempoPro) values (?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pst = c.prepareStatement(consulta);
             pst.setString(1, name);
             pst.setString(2, ref);
@@ -37,6 +37,8 @@ public class MaquinaDao {
             pst.setInt(6, tr);
             pst.setInt(7, TE);
             pst.setInt(8, TiempoE);
+            pst.setInt(9, TiempoEst);
+            pst.setInt(10, TiempoPro);
             pst.executeUpdate();
         } catch (SQLException e) {
             System.err.println(e);
@@ -65,6 +67,8 @@ public class MaquinaDao {
                 linea.setTR(rs.getInt("TR"));
                 linea.setTE(rs.getInt("TE"));
                 linea.setTiempoE(rs.getInt("TiempoE"));
+                linea.setTiempoEst(rs.getInt("TiempoEst"));
+                linea.setTiempoPro(rs.getInt("TiempoPro"));
                 Lista.add(linea);
                 System.out.println("Linea5");
 

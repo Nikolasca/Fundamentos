@@ -38,8 +38,10 @@ public class RegistrarMaquina extends HttpServlet {
         String f = request.getParameter("TE");
         String t = request.getParameter("tiempoE");
         String g = request.getParameter("idlinea");
+        String h = request.getParameter("tiempoEst");
+        String k = request.getParameter("tiempoPro");
         
-        System.out.print(nombre + desc + referencia + d + e + f + t + g);
+        System.out.print(nombre + desc + referencia + d + e + f + t + g+h+k);
         
         Maquina maq = new Maquina();
         
@@ -51,12 +53,14 @@ public class RegistrarMaquina extends HttpServlet {
         maq.setTR(Integer.parseInt(e));
         maq.setTE(Integer.parseInt(f));
         maq.setId_linea(Integer.parseInt(g));
+        maq.setTiempoEst(Integer.parseInt(h));
+        maq.setTiempoPro(Integer.parseInt(k));
         System.out.println("FOREIGN"+maq.getId_linea());
         Conexion cc = new Conexion();
         cc.connect();
         Connection con = cc.connect();
         MaquinaDao maquina = new MaquinaDao(con);
-        maquina.InsertarMaquina(maq.getNombre(), maq.getReferencia(), maq.getDesc(), maq.getTPT(), maq.getTR(), maq.getId_linea(), maq.getTE(), maq.getTiempoE());
+        maquina.InsertarMaquina(maq.getNombre(), maq.getReferencia(), maq.getDesc(), maq.getTPT(), maq.getTR(), maq.getId_linea(), maq.getTE(), maq.getTiempoE(),maq.getTiempoEst(),maq.getTiempoPro());
          
         ArrayList<Maquina> maquinitas= maquina.TraerListas(maq.getId_linea());
         System.out.print(maquinitas.size());

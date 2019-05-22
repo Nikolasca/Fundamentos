@@ -17,11 +17,13 @@
     
              <input type="text"   placeholder="Nombre" name="name">
             <input type="text"  placeholder="Desc" name="descrip">
-             <input type="text"   placeholder="Referencia" name="ref">
-            <input type="text"   placeholder="Tasa de producción teórica" name="Tpt">
-             <input type="text"   placeholder="Tasa rendimiento" name="TR">
-             <input type="text"  placeholder="Tasa eficiencia" name="TE">
-             <input type="text"   placeholder="Tiempo E" name="tiempoE"> 
+             <input type="number"   placeholder="Referencia" name="ref">
+            <input type="number"   placeholder="Tasa de producción teórica" name="Tpt">
+             <input type="number"   placeholder="Tasa rendimiento" name="TR">
+             <input type="number"  placeholder="Tasa eficiencia" name="TE">
+             <input type="number"   placeholder="Tiempo E" name="tiempoE"> 
+              <input type="number"   placeholder="Tiempo Estándar de producción" name="tiempoEst"> 
+               <input type="number"   placeholder="Tiempo Programado" name="tiempoPro"> 
               <input type="hidden" value="${linea.id}"  placeholder="Tasa eficiencia" name="idlinea"> 
              <button type="submit" class="btn btn-primary">Añadir Máquina</button>
         </form>
